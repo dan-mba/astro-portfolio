@@ -1,18 +1,21 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components';
+
+const path = new URL(Astro.request.url).pathname;
+function urlMatch(url: string) {
+  if (url !== path) return "";
+  return "underline underline-offset-8"
+}
 ---
 <ul class="list-none flex grow justify-end items-center text-2xl gap-3">
   <li>
-    <a href="/">About</a>
+    <a href="/" class={urlMatch("/")}>About</a>
   </li>
   <li>
-    <a href="/">Projects</a>
+    <a href="/projects" class={urlMatch("/projects")}>Projects</a>
   </li>
   <li>
-    <a href="/">Technologies</a>
-  </li>
-  <li>
-    <a href="/">Contributions</a>
+    <a href="/constibutions" class={urlMatch("/contributions")}>Contributions</a>
   </li>
   <li class="text-4xl">
     <a href="https://github.com/dan-mba" aria-label="GitHub" target="_blank" rel="noreferrer noopener">
