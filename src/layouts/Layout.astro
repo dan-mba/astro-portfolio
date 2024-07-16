@@ -36,7 +36,9 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/Damion-Dan.woff2">
 	</head>
-	<body class="dark:bg-primary-900 dark:text-primary-300 bg-neutral-200 text-neutral-800">
+	<body class="dark:bg-primary-900 dark:text-primary-300 bg-neutral-200 text-neutral-800
+		outline-secondary-500"
+	>
 		<NavBar />
 		<slot />
 	</body>

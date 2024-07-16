@@ -2,10 +2,30 @@
 import DesktopNav from './DesktopNav.astro';
 ---
 <header class="sticky w-full bg-primary-950 text-primary-200">
-  <nav class="flex max-w-screen-xl w-full mx-auto px-[1%]">
-    <a href="/">
-      <div class="text-5xl font-hw min-w-[100px]">Dan</div>
-    </a>
-    <DesktopNav />
-  </nav>
+  <div class="max-w-screen-xl w-full mx-auto px-[1%]">
+    <a href="#maincontent" class="skip-link absolute inline-block bg-primary-950 text-xl px-1.5 py-3">Skip to content</a>
+    <nav class="flex">
+      <a href="/" class="hover:text-secondary-700 dark:hover:text-secondary-300">
+        <div class="text-5xl font-hw min-w-[100px]">Dan</div>
+      </a>
+      <DesktopNav />
+    </nav>
+  </div>
 </header>
+<style>
+ .skip-link {
+  /* Ensure the Y position is set to zero and any movement on the transform property */
+  transform: translateY(0);
+  transition: transform 250ms ease-in;
+}
+
+/* When it is not focused, transform its Y position by its total height, using a negative value, so it hides above the viewport */
+.skip-link:not(:focus) {
+  transform: translateY(-6rem);
+}
+
+a:focus-within {
+  outline: 2px solid theme(colors.secondary.500);
+  outline-offset: 2px;
+}
+</style>
