@@ -2,7 +2,17 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		screens: {
+			xs: '100px',
+      sm: '350px',
+      md: '500px',
+      lg: '800px',
+      xl: '1200px',
+		},
 		extend: {
+			fontFamily: {
+				hw: ['Damion', 'cursive']
+			},
 			colors: {
 				primary: {
         	50: '#f6f6f6',

@@ -1,4 +1,6 @@
 ---
+import NavBar from '@components/NavBar.astro';
+
 interface Props {
 	title: string;
 	description: string;
@@ -31,12 +33,22 @@ const { title, description } = Astro.props;
 		<meta name="msapplication-TileColor" content="#da532c" />
 		<meta name="msapplication-config" content="/browserconfig.xml" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/Damion-Dan.woff2">
 	</head>
-	<body class="dark:bg-primary-900 dark:text-primary-100 bg-neutral-100 text-neutral-900">
+	<body class="dark:bg-primary-900 dark:text-primary-300 bg-neutral-200 text-neutral-800">
+		<NavBar />
 		<slot />
 	</body>
 </html>
 <style is:global>
+@font-face {
+  font-family: 'Damion';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Damion-Dan.woff2) format('woff2');
+}
+
 html {
 	box-sizing: border-box;
 }
