@@ -36,9 +36,7 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/Damion-Dan.woff2">
 	</head>
-	<body class="dark:bg-primary-900 dark:text-primary-300 bg-neutral-200 text-neutral-800
-		outline-secondary-500"
-	>
+	<body class="dark:bg-primary-900 dark:text-primary-300 bg-neutral-200 text-neutral-800">
 		<NavBar />
 		<slot />
 	</body>
@@ -52,7 +50,8 @@ const { title, description } = Astro.props;
   src: url(/fonts/Damion-Dan.woff2) format('woff2');
 }
 
-html {
-	box-sizing: border-box;
+a:focus-within {
+  outline: 2px solid theme(colors.secondary.500);
+  outline-offset: 2px;
 }
 </style>
