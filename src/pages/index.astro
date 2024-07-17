@@ -1,9 +1,28 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
+import binary from '../img/binary.jpg'
 ---
 
 <Layout title="Welcome to Astro." description='Home page'>
+	<section class="h-[23rem] w-full grid bg-black">
+		<Image
+			src={binary}
+			widths={[750, 1080, 1366, binary.width]}
+			sizes="100vw"
+			loading="eager"
+			alt=""
+			class="row-start-1 col-start-1 object-cover object-bottom h-full w-full opacity-20"
+		/>
+		<div class="row-start-1 col-start-1 grid place-items-center text-secondary-100">
+			<div class="text-center">
+				<h3 class="text-5xl font-semibold">Daniel Burkhardt</h3>
+				<h4 class="text-4xl">Software Engineer</h4>
+				<h4 class="text-4xl">Javascript - Python</h4>
+			</div>
+		</div>
+	</section>
 	<main id="#mainContent" tabindex="-1">
 		<h1>Welcome to Astro</h1>
 		<p class="instructions">
