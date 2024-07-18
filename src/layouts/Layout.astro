@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -36,7 +37,7 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/Damion-Dan.woff2">
 	</head>
-	<body class="dark:bg-primary-900 dark:text-primary-300 bg-neutral-200 text-neutral-800">
+	<body class="dark:bg-primary-900 dark:text-primary-200 bg-neutral-200 text-neutral-800">
 		<NavBar />
 		<slot />
 	</body>

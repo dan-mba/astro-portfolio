@@ -1,8 +1,50 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
-import Card from '@components/Card.astro';
 import binary from '../img/binary.jpg'
+
+const jobHistory = [
+  {
+    "title": "QuickBase",
+    "titleUrl": "https://www.quickbase.com/",
+    "img": "quickbase",
+    "imgAlt": "QuickBase Dashboard Image",
+    "p": [
+      "I spent several years building a sales management system for a small business that runs industrial & construction vehicle dealerships. The system is built on the QuickBase low code platform.",
+      "This platform provides a graphical interface for SQL like tables. I designed all the tables as well as the forms used for record operations. I also build HTML and JavaScript applications to display data from a record as a printable business form."
+    ]
+  },
+  {
+    "title": "Circuit Simulation",
+    "img": "circuits",
+    "imgAlt": "Circuit Simulation Image",
+    "p": [
+      "For a couple of years, I worked for a consulting organization at IBM that provided circuit design and simulation services.",
+      "One of the projects I worked on was to build an application to automate circuit simulations to characterize the performance for best- and worst-case scenarios.",
+      "Another project was to build a logical simulator for a circuit design to prove its functionality. This was needed because an electrical simulation for one input would take over 12 hours, while my logical simulator could run in under a minute."
+    ]
+  },
+  {
+    "title": "z/OS Language Environment",
+    "titleUrl": "https://www.ibm.com/docs/en/zos-basic-skills?topic=zos-what-is-language-environment",
+    "img": "ibmz",
+    "imgAlt": "IBM Mainframe Image",
+    "p": [
+      "I stared my career working on the z/OS mainframe operating system at IBM. I performed roles in both technical support and development.",
+      "My work was connected to the Language Environment component, which provides support for programming languages. I was specifically working with support for C and C++.",
+      "Much of my work during this time was centered around migrations. In technical support I was helping customers migrate their applications to libraries that had Y2k support. In development I was updating libraries to take full advantage of 64-bit hardware."
+    ]
+  }
+];
+
+const locations = [
+	'Miami / Ft Lauderdale',
+  'West Palm Beach',
+  'Tampa / St. Petersburg',
+  'Orlando',
+  'Fully Remote'
+];
+
 ---
 
 <Layout title="Welcome to Astro." description='Home page'>
@@ -23,78 +65,21 @@ import binary from '../img/binary.jpg'
 			</div>
 		</div>
 	</section>
-	<main id="#mainContent" tabindex="-1">
-		<h1>Welcome to Astro</h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+	<main id="#mainContent" tabindex="-1"
+		class="flex flex-col items-center pt-8 pb-4"
+	>
+		<h1 class="text-5xl">Welcome to Astro</h1>
+		<p class="text-base max-w-prose my-4">
+			I am a Software Engineer with years of experience developing software 
+    	for a wide variety of applications.
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<p class="text-base max-w-prose my-4">
+			Recently I have been working on front-end and back-end web development projects using 
+    	JavaScript & Python. Some of the back-end projects run on AWS, taking advantage of Lambda 
+    	& API Gateway.
+		</p>
+		
 	</main>
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+
