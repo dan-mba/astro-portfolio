@@ -1,13 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
-import binary from '../img/binary.jpg'
+import JobSection from '@components/JobSection.astro';
+import binary from '../img/binary.jpg';
+import qbImg from '../img/index-quickbase.jpg';
+import ciruitImg from '../img/index-circuits.jpg';
+import zImg from '../img/index-ibmz.jpg';
 
 const jobHistory = [
   {
     "title": "QuickBase",
     "titleUrl": "https://www.quickbase.com/",
-    "img": "quickbase",
+    "img": qbImg,
     "imgAlt": "QuickBase Dashboard Image",
     "p": [
       "I spent several years building a sales management system for a small business that runs industrial & construction vehicle dealerships. The system is built on the QuickBase low code platform.",
@@ -16,7 +20,7 @@ const jobHistory = [
   },
   {
     "title": "Circuit Simulation",
-    "img": "circuits",
+    "img": ciruitImg,
     "imgAlt": "Circuit Simulation Image",
     "p": [
       "For a couple of years, I worked for a consulting organization at IBM that provided circuit design and simulation services.",
@@ -27,7 +31,7 @@ const jobHistory = [
   {
     "title": "z/OS Language Environment",
     "titleUrl": "https://www.ibm.com/docs/en/zos-basic-skills?topic=zos-what-is-language-environment",
-    "img": "ibmz",
+    "img": zImg,
     "imgAlt": "IBM Mainframe Image",
     "p": [
       "I stared my career working on the z/OS mainframe operating system at IBM. I performed roles in both technical support and development.",
@@ -65,21 +69,31 @@ const locations = [
 			</div>
 		</div>
 	</section>
-	<main id="#mainContent" tabindex="-1"
-		class="flex flex-col items-center pt-8 pb-4"
-	>
-		<h1 class="text-5xl">Welcome to Astro</h1>
-		<p class="text-base max-w-prose my-4">
-			I am a Software Engineer with years of experience developing software 
-    	for a wide variety of applications.
-		</p>
-		<p class="text-base max-w-prose my-4">
-			Recently I have been working on front-end and back-end web development projects using 
-    	JavaScript & Python. Some of the back-end projects run on AWS, taking advantage of Lambda 
-    	& API Gateway.
-		</p>
-		
+	<main id="#mainContent" tabindex="-1">
+		<section class="flex flex-col items-center pt-8 pb-4">
+      <h1 class="text-5xl">Welcome to Astro</h1>
+      <p class="text-base max-w-prose my-4">
+        I am a Software Engineer with years of experience developing software 
+            for a wide variety of applications.
+      </p>
+      <p class="text-base max-w-prose my-4">
+        Recently I have been working on front-end and back-end web development projects using 
+            JavaScript & Python. Some of the back-end projects run on AWS, taking advantage of Lambda 
+            & API Gateway.
+      </p>
+    </section>
+		{jobHistory.map((job, index) => (
+      <JobSection
+        title={job.title}
+        titleUrl={job.titleUrl ? job.titleUrl : ''}
+        img={job.img}
+        imgAlt={job.imgAlt}
+        p={job.p}
+        index={index}
+      />
+    ))}
 	</main>
+
 </Layout>
 
 

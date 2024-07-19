@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string,
+  titleUrl: string,
+  img: ImageMetadata,
+  imgAlt: string,
+  p: string[],
+  index: number
+}
+
+const {title, titleUrl, img, imgAlt, p, index} = Astro.props;
+
+const indexClass = index % 2 === 0 ? "flex-row dark:bg-secondary-950 bg-secondary-200" : "flex-row-reverse"
+
+---
+<section class={`flex items-center w-full justify-around min-h-[350px] ${indexClass}`} >
+  <div class="w-[300px] hidden min-[900px]:block">
+    <Image
+			src={img}
+			width="300"
+			densities={[1, 1.5, 2]}
+			alt={imgAlt}
+			quality={70}
+		/>
+  </div>
+</section>
