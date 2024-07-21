@@ -17,9 +17,12 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.12.2(@types/node@20.14.11)(typescript@5.5.3))(tailwindcss@3.4.6)
-      '@iconify-json/fa-brands':
-        specifier: ^1.1.8
-        version: 1.1.8
+      '@iconify-json/fa6-brands':
+        specifier: ^1.1.21
+        version: 1.1.21
+      '@iconify-json/ic':
+        specifier: ^1.1.17
+        version: 1.1.17
       astro:
         specifier: ^4.12.2
         version: 4.12.2(@types/node@20.14.11)(typescript@5.5.3)
@@ -32,9 +35,6 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      tailwindcss:
-        specifier: ^3.4.6
-        version: 3.4.6
     devDependencies:
       '@types/react':
         specifier: ^18.3.3
@@ -42,6 +42,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      tailwindcss:
+        specifier: ^3.4.6
+        version: 3.4.6
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -414,8 +417,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@iconify-json/fa-brands@1.1.8':
-    resolution: {integrity: sha512-0HVT1+7hDww2vTtGyX4maUyiEXDYd6CK57bOGJ3hc3fjmXpMI9QKdej21pPSv1jBZ2nGzTlg8WJ2yNtN88/lFQ==}
+  '@iconify-json/fa6-brands@1.1.21':
+    resolution: {integrity: sha512-NS/BszVo8fUVpzA7/5b9tmkHzisZSUlm8kjdznk1Bux5p5QH3BxHZXrZUM5QsT90/7+omQC0EKukwf7H7nujZg==}
+
+  '@iconify-json/ic@1.1.17':
+    resolution: {integrity: sha512-EvAjZzVESmN36zlyefylePUNaU2BQ3eRKVZ6KQSQ2bG01ppoZaiFZRri74VTyvp5Mlv2yn68ux1fgCoT+etGmA==}
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -2831,7 +2837,11 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@iconify-json/fa-brands@1.1.8':
+  '@iconify-json/fa6-brands@1.1.21':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ic@1.1.17':
     dependencies:
       '@iconify/types': 2.0.0
 

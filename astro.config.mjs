@@ -8,6 +8,11 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind(),
-    icon()
+    icon({
+      include: {
+        'fa6-brands': ['github', 'linkedin'],
+        ic: ['outline-place']
+      }
+    })
   ]
 });

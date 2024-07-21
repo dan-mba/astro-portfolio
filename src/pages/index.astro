@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
 import JobSection from '@components/JobSection.astro';
 import binary from '../img/binary.jpg';
@@ -102,6 +103,18 @@ const locations = [
 		  	alt="Map of Florida with Pin in Broward County"
 		  	class="mt-4 mb-2"
 		  />
+      <p class="my-4 mx-auto text-base">I currently reside in southern Broward County Florida.</p>
+      <p class="my-4 mx-auto text-base">I am open to opportunities in the following locations:</p>
+      <ul class="list-none pb-4 text-base">
+        {locations.map(loc => (
+        <li class="flex justify-start items-center text-left w-full py-1 px-4">
+          <div class="pr-4 dark:text-secondary-300 text-secondary-900">
+            <Icon name="ic:outline-place" aria-hidden="true" focusable="false" class="w-6 h-6"/>
+          </div>
+          <div>{loc}</div>
+        </li>
+        ))}
+      </ul>
     </section>
 	</main>
 
