@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 
 const path = new URL(Astro.request.url).pathname;
 const base = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+console.log(path, base)
 function urlMatch(url: string) {
   if (url !== path) return "";
   return "underline underline-offset-8"
@@ -10,13 +11,13 @@ function urlMatch(url: string) {
 ---
 <ul class="list-none flex grow justify-end items-center text-2xl gap-3">
   <li class="hover:text-secondary-300">
-    <a href={`${base}/`} class={urlMatch(`/`)}>About</a>
+    <a href={`${base}/`} class={urlMatch(`${base}/`)}>About</a>
   </li>
   <li class="hover:text-secondary-300">
-    <a href={`${base}/projects`} class={urlMatch(`/projects`)}>Projects</a>
+    <a href={`${base}/projects`} class={urlMatch(`${base}/projects`)}>Projects</a>
   </li>
   <li class="hover:text-secondary-300">
-    <a href={`${base}/contributions`} class={urlMatch(`/contributions`)}>Contributions</a>
+    <a href={`${base}/contributions`} class={urlMatch(`${base}/contributions`)}>Contributions</a>
   </li>
   <li class="text-4xl hover:text-secondary-300">
     <a href="https://github.com/dan-mba" aria-label="GitHub" target="_blank" rel="noreferrer noopener">
