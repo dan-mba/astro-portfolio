@@ -1,11 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-const path = new URL(Astro.request.url).pathname;
+const path = Astro.url.pathname;
 const base = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
 console.log(path, base)
 function urlMatch(url: string) {
-  if (url !== path) return "";
+  if (url !== path) return `${url} ${path}`;
   return "underline underline-offset-8"
 }
 ---
