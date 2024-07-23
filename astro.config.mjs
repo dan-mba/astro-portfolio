@@ -12,6 +12,7 @@ const pages = process.env.CI ?
 // https://astro.build/config
 export default defineConfig({
   ...pages,
+  trailingSlash: 'always',
   integrations: [
     react(),
     tailwind(),
