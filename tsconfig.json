@@ -8,5 +8,6 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"]
     }
-  }
+  },
+  "include": ["src"]
 }
