@@ -38,7 +38,6 @@ type FlatRepo = {
   openGraphImageUrl: string,
   pushedAt: string,
   topics: string[],
-  stargazerCount: number,
   url: string
 };
 
@@ -55,7 +54,26 @@ type UserQuery = {
   }
 };
 
-const repoLanguages = ['JavaScript','Vue','Python','TypeScript']
+const repoLanguages = ['JavaScript','Vue','Python','TypeScript'];
+
+function flattenRepo (
+  {description,homepageUrl, languages, name, openGraphImageUrl, pushedAt, repositoryTopics, url }: RepoData,
+  pins: string[]
+): FlatRepo {
+  const topics = repositoryTopics.nodes.map(t => t.topic.name).sort();
+  const langs = languages.edges.map(lang => {
+    return {
+      name: lang.node.name,
+      size: Math.round((lang.size / languages.totalSize) * 10000) / 100
+    };
+  });
+  const isPinned = pins.includes(name)
+
+  return {
+    description, homepageUrl, isPinned, name, openGraphImageUrl, pushedAt, topics, url,
+    languages: langs
+  }
+}
 
 export async function getRepos() {
   const token = import.meta.env.GITHUB_TOKEN;
@@ -95,7 +113,6 @@ export async function getRepos() {
                 }
               }
             }
-            stargazerCount
             url
           }
         }
@@ -120,9 +137,7 @@ export async function getRepos() {
     return false;
   })
   const pins = user.pinnedItems.nodes.map(p => p.name);
+  const flatRepos = repos.map(p => flattenRepo(p, pins));
 
-  return {
-    repos,
-    pins
-  };
+  return flatRepos;
 }

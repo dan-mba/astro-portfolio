@@ -4,7 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import { getRepos } from '@data/repos';
 
 export const getStaticPaths =(async ({ paginate }) => {
-  const {repos} = await getRepos();
+  const repos = await getRepos();
   // Generate pages from our array of astronauts, with 2 to a page
   return paginate(repos, { pageSize: 6 });
 }) satisfies GetStaticPaths ;
