@@ -13,6 +13,9 @@ const pages = process.env.CI ?
 export default defineConfig({
   ...pages,
   trailingSlash: 'always',
+  image: {
+    domains: ["repository-images.githubusercontent.com"],
+  },
   integrations: [
     react(),
     tailwind(),

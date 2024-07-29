@@ -137,7 +137,14 @@ export async function getRepos() {
     return false;
   })
   const pins = user.pinnedItems.nodes.map(p => p.name);
-  const flatRepos = repos.map(p => flattenRepo(p, pins));
+  const flatRepos = repos.map(p => flattenRepo(p, pins))
+    .sort((a, b) => {
+      if (a.isPinned === b.isPinned) {
+        return Date.parse(b.pushedAt) - Date.parse(a.pushedAt);
+      }
+      if (a.isPinned) return -1; // Place pinned items first in sort
+      return 1;
+    });
 
   return flatRepos;
 }

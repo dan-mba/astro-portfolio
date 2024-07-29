@@ -5,18 +5,19 @@ import { getRepos } from '@data/repos';
 
 export const getStaticPaths =(async ({ paginate }) => {
   const repos = await getRepos();
-  // Generate pages from our array of astronauts, with 2 to a page
   return paginate(repos, { pageSize: 6 });
-}) satisfies GetStaticPaths ;
-// All paginated data is passed on the "page" prop
+}) satisfies GetStaticPaths;
+
 const { page } = Astro.props;
 ---
 
 <!--Display the current page number. Astro.params.page can also be used!-->
-<Layout title=`Welcome to Astro. Projects Page ${page.currentPage}` description="Home page">
-  <h1>Page {page.currentPage} of {page.lastPage}</h1>
-  <ul>
-    <!--List the array of astronaut info-->
-    {page.data.map(({ name }) => <li>{name}</li>)}
-  </ul>
+<Layout title=`Welcome to Astro. Projects Page ${page.currentPage}` description=`Projects Page ${page.currentPage}`>
+  <main id="maincontent" class="max-w-screen-xl w-full mx-auto px-[1%]">
+    <h1 class="text-center text-5xl">Projects Page {page.currentPage} of {page.lastPage}</h1>
+    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+      <!--List the array of astronaut info-->
+      {page.data.map(({ name }) => <li class="text-center">{name}</li>)}
+    </ul>
+  </main>
 </Layout>
