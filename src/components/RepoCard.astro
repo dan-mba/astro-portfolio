@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import type { FlatRepo } from '@data/repos';
 
 interface Props {
@@ -7,11 +8,11 @@ interface Props {
 	index: number;
 }
 
-const { repo: {name, openGraphImageUrl}, index } = Astro.props;
+const { repo: {homepageUrl ,name, openGraphImageUrl, url}, index } = Astro.props;
 ---
 
-<li class="text-center">
-	<h2 class="text-xl">{name}</h2>
+<li class="text-center dark:bg-primary-950 rounded-lg py-2">
+	<h2 class="text-3xl font-bold">{name}</h2>
 	<Image
 		src={openGraphImageUrl}
 		width="572"
@@ -22,4 +23,17 @@ const { repo: {name, openGraphImageUrl}, index } = Astro.props;
 		quality={50}
 		class="mt-4 mb-2"
 	/>
+	<div class="flex justify-between text-xl px-2">
+		<a href={url} class="flex gap-1 items-center" target="_blank" rel="noreferrer noopener">
+			<Icon name="ic:baseline-code" aria-hidden="true" class="text-2xl"/>
+			<div>Code</div>
+		</a>
+		{homepageUrl ? 
+			<a href={homepageUrl} class="flex gap-1 items-center" target="_blank" rel="noreferrer noopener">
+				<div>Deployed</div>
+				<Icon name="ic:twotone-web" aria-hidden="true" class="text-2xl"/>
+			</a> :
+			<div></div>
+		}
+	</div>
 </li>
