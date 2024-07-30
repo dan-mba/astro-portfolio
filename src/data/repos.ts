@@ -26,7 +26,7 @@ type RepoData = {
   url: string
 };
 
-type FlatRepo = {
+export type FlatRepo = {
   description: string,
   homepageUrl: string,
   isPinned: boolean,

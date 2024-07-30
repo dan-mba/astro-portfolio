@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import Layout from '@layouts/Layout.astro';
+import RepoCard from '@components/RepoCard.astro';
 import { getRepos } from '@data/repos';
 
 export const getStaticPaths =(async ({ paginate }) => {
@@ -17,7 +18,7 @@ const { page } = Astro.props;
     <h1 class="text-center text-5xl">Projects Page {page.currentPage} of {page.lastPage}</h1>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
       <!--List the array of astronaut info-->
-      {page.data.map(({ name }) => <li class="text-center">{name}</li>)}
+      {page.data.map((repo, index) => <RepoCard repo={repo} index={index}/>)}
     </ul>
   </main>
 </Layout>
