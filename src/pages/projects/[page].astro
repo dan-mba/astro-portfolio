@@ -1,13 +1,18 @@
 ---
-import type { GetStaticPaths } from 'astro';
+import type { GetStaticPaths, Page } from 'astro';
 import Layout from '@layouts/Layout.astro';
 import RepoCard from '@components/RepoCard.astro';
 import { getRepos } from '@data/repos';
+import type { FlatRepo } from '@data/repos';
 
-export const getStaticPaths =(async ({ paginate }) => {
+export const getStaticPaths = (async ({ paginate }) => {
   const repos = await getRepos();
   return paginate(repos, { pageSize: 6 });
 }) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<FlatRepo>;
+}
 
 const { page } = Astro.props;
 ---
