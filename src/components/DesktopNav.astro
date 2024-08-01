@@ -3,9 +3,9 @@ import { Icon } from 'astro-icon/components';
 
 const path = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
-console.log(path, base)
+
 function urlMatch(url: string) {
-  if (url !== path) return `${url} ${path}`;
+  if (url !== path) return '';
   return "underline underline-offset-8"
 }
 ---

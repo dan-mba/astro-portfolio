@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { FlatRepo } from '@data/repos';
+
+interface Props {
+	repo: FlatRepo;
+	index: number;
+}
+
+const { repo: {description, homepageUrl ,languages, name, openGraphImageUrl, url}, index } = Astro.props;
+---
+
+<li class="text-center dark:bg-primary-950 bg-primary-200 rounded-lg py-2 flex flex-col">
+	<h2 class="text-3xl font-bold">{name}</h2>
+	<h3 class="text-xl dark:text-secondary-300 text-secondary-900">
+		{languages.map(l => `${l.name}: ${l.size}%`).join(', ')}
+	</h3>
+	<Image
+		src={openGraphImageUrl}
+		width="572"
+    height="286"
+		densities={[1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2]}
+		loading={index === 0 ? 'eager' : 'lazy'}
+		alt=""
+		quality={50}
+		class="mt-4 mb-2"
+	/>
+	<p class="text-base grow pb-2">{description}</p>
+	<div class="flex justify-between text-base px-2 dark:text-primary-300 text-primary-800">
+		<a href={url} class="flex gap-1 items-center" target="_blank" rel="noreferrer noopener">
+			<Icon name="ic:baseline-code" aria-hidden="true" class="text-2xl"/>
+			<div>Code</div>
+		</a>
+		{homepageUrl ? 
+			<a href={homepageUrl} class="flex gap-1 items-center" target="_blank" rel="noreferrer noopener">
+				<div>Deployed</div>
+				<Icon name="ic:twotone-web" aria-hidden="true" class="text-2xl"/>
+			</a> :
+			<div></div>
+		}
+	</div>
+</li>
