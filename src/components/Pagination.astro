@@ -13,11 +13,11 @@ const range = Array.from({length: lastPage}, (_v, i) => i+1)
   <ul class="list-none flex gap-4 justify-center font-medium">
     {range.map(pg => (
       pg === currentPage ?
-      <li class="py-4 px-6 rounded-full dark:bg-primary-950 bg-primary-200">
-        <a aria-current="true" tabindex="0" aria-label={`page ${pg}`} href={`${base}${pg}/`}>{pg}</a>
+      <li class="rounded-full dark:bg-primary-950 bg-primary-200">
+        <a class="leading-[3.5rem] py-[1.125rem] px-6" aria-current="true" tabindex="0" aria-label={`page ${pg}`} href={`${base}${pg}/`}>{pg}</a>
       </li> :
-      <li class="py-4 px-6 rounded-full hover:dark:bg-primary-950 hover:bg-primary-200">
-        <a tabindex="0" aria-label={`go to page ${pg}`} href={`${base}${pg}/`}>{pg}</a>
+      <li class="rounded-full hover:dark:bg-primary-950 hover:bg-primary-200">
+        <a class="leading-[3.5rem] py-[1.125rem] px-6" tabindex="0" aria-label={`go to page ${pg}`} href={`${base}${pg}/`}>{pg}</a>
       </li>
     ))}
   </ul>
