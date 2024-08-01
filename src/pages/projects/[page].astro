@@ -2,6 +2,7 @@
 import type { GetStaticPaths, Page } from 'astro';
 import Layout from '@layouts/Layout.astro';
 import RepoCard from '@components/RepoCard.astro';
+import Pagination from '@components/Pagination.astro';
 import { getRepos } from '@data/repos';
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -9,16 +10,18 @@ export const getStaticPaths = (async ({ paginate }) => {
   return paginate(repos, { pageSize: 6 });
 }) satisfies GetStaticPaths;
 
-const { page } = Astro.props;
+const { page: {currentPage, lastPage, data} } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!--Display the current page number. Astro.params.page can also be used!-->
-<Layout title=`Welcome to Astro. Projects Page ${page.currentPage}` description=`Projects Page ${page.currentPage}`>
+<Layout title=`Welcome to Astro. Projects Page ${currentPage}` description=`Projects Page ${currentPage}`>
   <main id="maincontent" class="max-w-screen-xl w-full mx-auto px-[1%] py-4">
-    <h1 class="text-center text-4xl py-4">Personal Projects {page.currentPage} of {page.lastPage}</h1>
+    <h1 class="text-center text-4xl py-4">Personal Projects {currentPage} of {lastPage}</h1>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
       <!--List the array of astronaut info-->
-      {page.data.map((repo, index) => <RepoCard repo={repo} index={index}/>)}
+      {data.map((repo, index) => <RepoCard repo={repo} index={index}/>)}
     </ul>
   </main>
+  <Pagination base={`${base}projects/`} currentPage={currentPage} lastPage={lastPage} />
 </Layout>
