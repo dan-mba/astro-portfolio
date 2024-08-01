@@ -1,11 +1,12 @@
 ---
 import DesktopNav from './DesktopNav.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <header class="sticky w-full bg-primary-950 text-primary-200">
   <div class="max-w-screen-xl w-full mx-auto px-[1%]">
     <a href="#maincontent" class="skip-link absolute inline-block bg-primary-950 text-xl px-1.5 py-3">Skip to content</a>
     <nav class="flex">
-      <a href="/" class="hover:text-secondary-300">
+      <a href={`${base}`} class="hover:text-secondary-300">
         <div class="text-5xl font-hw min-w-[100px]">Dan</div>
       </a>
       <DesktopNav />
