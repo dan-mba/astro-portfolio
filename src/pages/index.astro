@@ -44,7 +44,7 @@ const jobHistory = [
 ];
 
 const locations = [
-	'Miami / Ft Lauderdale',
+  'Miami / Ft Lauderdale',
   'West Palm Beach',
   'Tampa / St. Petersburg',
   'Orlando',
@@ -53,27 +53,32 @@ const locations = [
 
 ---
 
-<Layout title="Welcome to Astro." description="Home page">
-	<section class="h-[23rem] w-full grid bg-black">
-		<Image
-			src={binary}
-			widths={[750, 1080, 1366, binary.width]}
-			sizes="100vw"
-			loading="eager"
-			alt=""
-			class="row-start-1 col-start-1 object-cover object-bottom h-[23rem] w-full opacity-20"
-		/>
-		<div class="row-start-1 col-start-1 grid place-items-center text-secondary-100">
-			<div class="text-center">
-				<h3 class="text-5xl font-semibold">Daniel Burkhardt</h3>
-				<h4 class="text-4xl">Software Engineer</h4>
-				<h4 class="text-4xl">Javascript - Python</h4>
-			</div>
-		</div>
-	</section>
-	<main id="#mainContent" tabindex="-1">
-		<section class="flex flex-col items-center pt-8 pb-4">
-      <h1 class="text-5xl">Welcome to Astro</h1>
+<Layout
+  title="Daniel Burkhardt - About"
+  description="Software Development Portfolio Site for Daniel Burkhardt - About Me Page"
+>
+  <section class="h-[23rem] w-full grid bg-black">
+    <Image
+      src={binary}
+      widths={[750, 1080, 1366, binary.width]}
+      sizes="100vw"
+      loading="eager"
+      alt=""
+      class="row-start-1 col-start-1 object-cover object-bottom h-[23rem] w-full opacity-20"
+    />
+    <div class="row-start-1 col-start-1 grid place-items-center text-secondary-100">
+      <div class="text-center">
+        <div class="text-5xl font-semibold">Daniel Burkhardt</div>
+        <div class="text-4xl">Software Engineer</div>
+        <div class="text-3xl max-w-prose">
+          JavaScript &#x2027; TypeScript &#x2027; React &#x2027; Next.js &#x2027; Node.js &#x2027; Python
+        </div>
+      </div>
+    </div>
+  </section>
+  <main id="#mainContent" tabindex="-1">
+    <section class="flex flex-col items-center pt-8 pb-4">
+      <h1 class="text-5xl">About Me</h1>
       <p class="text-base max-w-prose my-4">
         I am a Software Engineer with years of experience developing software 
             for a wide variety of applications.
@@ -84,7 +89,7 @@ const locations = [
             & API Gateway.
       </p>
     </section>
-		{jobHistory.map((job, index) => (
+    {jobHistory.map((job, index) => (
       <JobSection
         title={job.title}
         titleUrl={job.titleUrl ? job.titleUrl : ''}
@@ -96,13 +101,13 @@ const locations = [
     ))}
     <section class="flex flex-col items-center w-full py-4 px-[min(2vw,2em)]">
       <Image
-		  	src={map}
-		  	width="300"
+        src={map}
+        width="300"
         height="300"
-		  	densities={[1, 1.5, 2]}
-		  	alt="Map of Florida with Pin in Broward County"
-		  	class="mt-4 mb-2"
-		  />
+        densities={[1, 1.5, 2]}
+        alt="Map of Florida with Pin in Broward County"
+        class="mt-4 mb-2"
+      />
       <p class="my-4 mx-auto text-base">I currently reside in southern Broward County Florida.</p>
       <p class="my-4 mx-auto text-base">I am open to opportunities in the following locations:</p>
       <ul class="list-none pb-4 text-base">
@@ -116,7 +121,7 @@ const locations = [
         ))}
       </ul>
     </section>
-	</main>
+  </main>
 
 </Layout>
 
