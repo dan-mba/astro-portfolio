@@ -4,9 +4,7 @@ const base = import.meta.env.BASE_URL;
 ---
 <header class="sticky w-full bg-primary-950 text-primary-200">
   <div class="max-w-screen-xl w-full mx-auto px-[1%]">
-    <div id="skip">
-      <a href="#maincontent" class="text-xl px-1.5 py-3">Skip to content</a>
-    </div>
+    <a href="#maincontent" class="skip-link absolute block bg-primary-950 text-xl px-1.5 py-3">Skip to content</a>
     <nav class="flex">
       <a href={`${base}`} class="hover:text-secondary-300">
         <div class="text-5xl font-hw min-w-[100px]">Dan</div>
@@ -16,15 +14,14 @@ const base = import.meta.env.BASE_URL;
   </div>
 </header>
 <style>
-#skip a {
-  display: block;
-  position: absolute;
-  left: -999px;
-  top: -999px;
+.skip-link {
+  /* Ensure the Y position is set to zero and any movement on the transform property */
+  transform: translateY(0);
+  transition: transform 250ms ease-in;
 }
 
-#skip a:focus {
-  left: 0;
-  top: 0;
+/* When it is not focused, transform its Y position by its total height, using a negative value, so it hides above the viewport */
+.skip-link:not(:focus) {
+  transform: translateY(-6rem);
 }
 </style>
