@@ -3,7 +3,6 @@ import type { GetStaticPaths, Page } from 'astro';
 import Layout from '@layouts/Layout.astro';
 import Pagination from '@components/Pagination.astro';
 import { getContributions } from '@data/contribs';
-import type { prContributions } from '@data/contribs';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const repos = await getContributions();

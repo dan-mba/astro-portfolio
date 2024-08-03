@@ -32,6 +32,9 @@ importers:
       astro-icon:
         specifier: ^1.1.0
         version: 1.1.0
+      emoji-js:
+        specifier: ^3.8.0
+        version: 3.8.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -39,6 +42,9 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@types/emoji-js':
+        specifier: ^3.5.2
+        version: 3.5.2
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -682,6 +688,9 @@ packages:
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
+  '@types/emoji-js@3.5.2':
+    resolution: {integrity: sha512-qPR85yjSPk2UEbdjYYNHfcOjVod7DCARSrJlPcL+cwaDFwdnmOFhPyYUvP5GaW0YZEy8mU93ZjTNgsVWz1zzlg==}
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -1070,6 +1079,12 @@ packages:
 
   emmet@2.4.7:
     resolution: {integrity: sha512-O5O5QNqtdlnQM2bmKHtJgyChcrFMgQuulI+WdiOw2NArzprUqqxUW6bgYtKvzKgrsYpuLWalOkdhNP+1jluhCA==}
+
+  emoji-datasource@15.0.1:
+    resolution: {integrity: sha512-aF5Q6LCKXzJzpG4K0ETiItuzz0xLYxNexR9qWw45/shuuEDWZkOIbeGHA23uopOSYA/LmeZIXIFsySCx+YKg2g==}
+
+  emoji-js@3.8.0:
+    resolution: {integrity: sha512-A5FNHKlRPRo6RJWrrdGWnoolIBMkVXHy4qkO0V5ahekQPjfVECxvOOWADeAF/SbzRVA9Sxdj24FCoRYGt06skA==}
 
   emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
@@ -3022,6 +3037,8 @@ snapshots:
     dependencies:
       '@types/ms': 0.7.34
 
+  '@types/emoji-js@3.5.2': {}
+
   '@types/estree@1.0.5': {}
 
   '@types/hast@3.0.4':
@@ -3508,6 +3525,12 @@ snapshots:
     dependencies:
       '@emmetio/abbreviation': 2.3.3
       '@emmetio/css-abbreviation': 2.1.8
+
+  emoji-datasource@15.0.1: {}
+
+  emoji-js@3.8.0:
+    dependencies:
+      emoji-datasource: 15.0.1
 
   emoji-regex@10.3.0: {}
 
