@@ -5,6 +5,12 @@ emoji.replace_mode = 'unified';
 emoji.allow_native = true;
 emoji.allow_caps = true;
 
+type filterType = {
+  owner: string;
+  name: string;
+  number: number;
+}
+
 const repoFilter = [{owner: 'firstcontributions', name: 'first-contributions'}];
 const issueFilter = [
   {owner: 'gatsbyjs', name: 'gatsby', number: 36192},
@@ -15,7 +21,7 @@ const issueFilter = [
   {owner: 'EddieHubCommunity', name: 'LinkFree', number: 2052},
   {owner: 'AccessibleForAll', name: 'Support', number: 422}
 ];
-const prFilter = [];
+const prFilter: filterType[] = [];
 const maxContributions = 12;
 const userid = "dan-mba";
 
@@ -99,6 +105,7 @@ type repoData = {
   url: string;
 }
 
+
 type prData = {
   merged: boolean
   mergedAt: string;
@@ -147,6 +154,16 @@ type contributionQuery = {
   }
 };
 
+type flatContribution = {
+  description: string;
+  name: string;
+  owner: string;
+  stargazerCount: number;
+  url: string;
+  prs: prData[];
+  issues: issueData[];
+  totalContributions: number;
+}
 
 export async function getContributions() {
   const token = import.meta.env.GITHUB_TOKEN;
@@ -258,5 +275,76 @@ export async function getContributions() {
     end = new Date(start.getTime() - 1);
   }
 
-  return prs;
+  let repos: flatContribution[] = [];
+
+  repos = prs.map(r => {
+    let repo = structuredClone(r);
+    let contribs = repo.contributions.edges.map(e => e.node.pullRequest);
+
+    // filter out PRs that are not merged
+    contribs = contribs.filter(c => c.merged);
+
+    return {
+      ...repo.repository,
+      owner: repo.repository.owner.login,
+      prs: contribs,
+      issues: [],
+      totalContributions: contribs.length
+    };
+  });
+  
+  repos = repos.filter(r => r.totalContributions !== 0);
+  if (prFilter.length > 0) {
+    prFilter.forEach(r => {
+      const index = repos.findIndex(rp => (rp.name === r.name) && (rp.owner === r.owner));
+      if (index >= 0) {
+        const prIndex = repos[index].prs.findIndex(pr => pr.number === r.number);
+        if (prIndex >= 0) {
+          repos[index].prs.splice(prIndex, 1);
+          repos[index].totalContributions--;
+        }
+        if (repos[index].totalContributions === 0) {
+          repos.splice(index, 1);
+        }
+      }
+    })
+  }
+
+  let issueRepos: flatContribution[] = [];
+
+  issueRepos = issues.map(r => {
+    let repo = structuredClone(r)
+    let contribs = repo.contributions.edges.map(e => e.node.issue);
+
+    // filter out issues that are not closed and the userid did not author
+    contribs = contribs.filter(c => c.closed && c.viewerDidAuthor);
+    return {
+      ...repo.repository,
+      owner: repo.repository.owner.login,
+      prs: [],
+      issues: contribs,
+      totalContributions: contribs.length
+    };
+
+
+  });
+
+  issueRepos = issueRepos.filter(r => r.totalContributions !== 0);
+  if (issueFilter.length > 0) {
+    issueFilter.forEach(r => {
+      const index = issueRepos.findIndex(repo => (repo.name === r.name) && (repo.owner === r.owner));
+      if (index >= 0) {
+        const issueIndex = issueRepos[index].issues.findIndex(issue => issue.number === r.number);
+        if (issueIndex >= 0) {
+          issueRepos[index].issues.splice(issueIndex, 1);
+          issueRepos[index].totalContributions--;
+        }
+        if (issueRepos[index].totalContributions === 0) {
+          issueRepos.splice(index, 1);
+        }
+      }
+    })
+  }
+
+  return [...repos, ...issueRepos];
 }
