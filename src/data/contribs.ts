@@ -159,6 +159,7 @@ type flatContribution = {
   name: string;
   owner: string;
   stargazerCount: number;
+  stargazerPrint?: string;
   url: string;
   prs: prData[];
   issues: issueData[];
@@ -346,5 +347,33 @@ export async function getContributions() {
     })
   }
 
-  return [...repos, ...issueRepos];
+  // if repo already in the array, add issues to it otherwise push it to the array
+  issueRepos.forEach(r => {
+    const exists = repos.findIndex(repo => {
+      return (repo.name === r.name) && (repo.owner === r.owner);
+    });
+
+    if (exists < 0) {
+      repos.push(r);
+      return;
+    }
+    repos[exists].issues = r.issues;
+    repos[exists].totalContributions += r.totalContributions;
+  });
+
+  repos.forEach(r => {
+    r.description = cropString(emoji.replace_colons(r.description));
+    r.stargazerPrint = r.stargazerCount < 1000 ? `${r.stargazerCount}` :
+      Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'short' }).format(r.stargazerCount);
+  })
+
+  repos.sort((a, b) => {
+    if (a.totalContributions === b. totalContributions) {
+      //compare while ignoring case
+      return a.name.localeCompare(b.name, 'en', { sensitivity: 'base' })
+    }
+    return b.totalContributions - a.totalContributions;
+  })
+
+  return repos;
 }
