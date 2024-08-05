@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import type { flatContribution } from '@data/contribs';
 
@@ -10,12 +9,40 @@ interface Props {
 const { repo: {description,issues, name, prs, url} } = Astro.props;
 ---
 
-<li class="text-center dark:bg-primary-950 bg-primary-200 rounded-lg py-2 flex flex-col">
-	<h2 class="text-3xl font-bold">{name}</h2>
-	<p class="text-base px-2 lg:px-6 dark:text-secondary-300 text-secondary-900">
+<li class="dark:bg-primary-950 bg-primary-200 rounded-lg py-2 flex flex-col px-2">
+	<div class="flex justify-center flex-col lg:flex-row">
+		<h2 class="text-center text-3xl font-bold">{name}</h2>
+		<a href={url} target="_blank" rel="noreferrer noopener" aria-label=`link to ${name} repo`
+			class="text-3xl self-center pl-2  hover:dark:text-secondary-300 hover:text-secondary-900"
+		>
+			<Icon name="ic:baseline-link" aria-hidden="true"/>
+		</a>
+	</div>
+	<p class="text-center min-h-[4.5rem] lg:px-4 dark:text-secondary-300 text-secondary-900">
 		{description}
 	</p>
-	<p>{issues.length} {prs.length}</p>
-	{issues.length > 0 ? <p>{issues[0].title}</p> : null}
-	{prs.length > 0 ? <p>{prs[0].title}</p> : null}
+	{prs.length > 0 ? 
+		<div class="pt-4">
+			<h3 class="text-center text-xl font-medium">Pull Requests</h3>
+			{prs.map(p => (
+				<a href={p.url} target="_blank" rel="noreferrer noopener"
+					class="py-2 hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
+				>
+					<p>{p.title}</p>
+				</a>
+			))}
+		</div> : null
+	}
+	{issues.length > 0 ? 
+		<div class="pt-4">
+			<h3 class="text-center text-xl font-medium">Issues</h3>
+			{issues.map(i => (
+				<a href={i.url} target="_blank" rel="noreferrer noopener"
+				  class="py-2 hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
+				>
+					<p>{i.title}</p>
+				</a>
+			))}
+		</div> : null
+	}
 </li>
