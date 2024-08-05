@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { flatContribution } from '@data/contribs';
+
+interface Props {
+	repo: flatContribution;
+}
+
+const { repo: {description,issues, name, prs, url} } = Astro.props;
+---
+
+<li class="text-center dark:bg-primary-950 bg-primary-200 rounded-lg py-2 flex flex-col">
+	<h2 class="text-3xl font-bold">{name}</h2>
+	<p class="text-base px-2 lg:px-6 dark:text-secondary-300 text-secondary-900">
+		{description}
+	</p>
+</li>

@@ -17,8 +17,8 @@ const issueFilter = [
   {owner: 'microsoft', name: 'playwright', number: 18847},
   {owner: 'EddieHubCommunity', name: 'support', number: 5763},
   {owner: 'EddieHubCommunity', name: 'EddieHubLive', number: 64},
-  {owner: 'EddieHubCommunity', name: 'LinkFree', number: 1987},
-  {owner: 'EddieHubCommunity', name: 'LinkFree', number: 2052},
+  {owner: 'EddieHubCommunity', name: 'BioDrop', number: 1987},
+  {owner: 'EddieHubCommunity', name: 'BioDrop', number: 2052},
   {owner: 'AccessibleForAll', name: 'Support', number: 422}
 ];
 const prFilter: filterType[] = [];
@@ -26,13 +26,14 @@ const maxContributions = 12;
 const userid = "dan-mba";
 
 const cropString = (str: string) => {
-  if (str.length > 80) {
-    const word = str.substring(80).indexOf(' ');
+  const cropLength = 100;
+  if (str.length > cropLength) {
+    const word = str.substring(cropLength).indexOf(' ');
     if (word < 0) {
       return str;
     }
 
-    return `${str.substring(0, 80+word)}...`;
+    return `${str.substring(0, cropLength+word)}...`;
   }
   return str;
 }
@@ -154,7 +155,7 @@ type contributionQuery = {
   }
 };
 
-type flatContribution = {
+export type flatContribution = {
   description: string;
   name: string;
   owner: string;

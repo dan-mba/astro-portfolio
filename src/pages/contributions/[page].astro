@@ -2,6 +2,7 @@
 import type { GetStaticPaths, Page } from 'astro';
 import Layout from '@layouts/Layout.astro';
 import Pagination from '@components/Pagination.astro';
+import ContributionCard from '@components/ContributionCard.astro';
 import { getContributions } from '@data/contribs';
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -20,7 +21,7 @@ const base = import.meta.env.BASE_URL;
   <main id="maincontent" class="max-w-screen-xl w-full mx-auto px-[1%] py-4">
     <h1 class="text-center text-4xl py-4">Open Source Contributions</h1>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
-      {data.map((repo, index) => <div>{repo.name} {repo.totalContributions}</div>)}
+      {data.map((repo) => <ContributionCard repo={repo} />)}
     </ul>
   </main>
   <Pagination base={`${base}contributions/`} currentPage={currentPage} lastPage={lastPage} />
