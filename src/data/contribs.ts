@@ -376,5 +376,17 @@ export async function getContributions() {
     return b.totalContributions - a.totalContributions;
   })
 
+  repos.forEach(r => {
+    if (r.totalContributions <= maxContributions) return;
+    const dates = [
+      ...r.issues.map(i => i.closedAt), ...r.prs.map(p => p.mergedAt)
+    ];
+    dates.sort((a,b) => Date.parse(b) - Date.parse(a));
+    const cutoff = Date.parse(dates[maxContributions])
+    r.issues = r.issues.filter(i => Date.parse(i.closedAt) > cutoff)
+    r.prs = r.prs.filter(p => Date.parse(p.mergedAt) > cutoff)
+    r.totalContributions = r.issues.length + r.prs.length;
+  })
+
   return repos;
 }

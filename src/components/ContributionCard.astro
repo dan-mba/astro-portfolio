@@ -15,4 +15,7 @@ const { repo: {description,issues, name, prs, url} } = Astro.props;
 	<p class="text-base px-2 lg:px-6 dark:text-secondary-300 text-secondary-900">
 		{description}
 	</p>
+	<p>{issues.length} {prs.length}</p>
+	{issues.length > 0 ? <p>{issues[0].title}</p> : null}
+	{prs.length > 0 ? <p>{prs[0].title}</p> : null}
 </li>
