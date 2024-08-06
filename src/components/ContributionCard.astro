@@ -6,30 +6,38 @@ interface Props {
 	repo: flatContribution;
 }
 
-const { repo: {description,issues, name, prs, url} } = Astro.props;
+const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, url} } = Astro.props;
 ---
 
-<li class="dark:bg-primary-950 bg-primary-200 rounded-lg py-2 flex flex-col px-2">
-	<div class="flex justify-center flex-col lg:flex-row">
+<li class="dark:bg-primary-950 bg-primary-200 rounded-lg py-2 px-2">
+	<div class="flex justify-center flex-col">
 		<h2 class="text-center text-3xl font-bold">{name}</h2>
-		<a href={url} target="_blank" rel="noreferrer noopener" aria-label=`link to ${name} repo`
-			class="text-3xl self-center pl-2  hover:dark:text-secondary-300 hover:text-secondary-900"
-		>
-			<Icon name="ic:baseline-link" aria-hidden="true"/>
-		</a>
+		<div class="text-2xl flex flex-row justify-between items-center gap-2 lg:min-h-[4.5rem]">
+			<div class="flex">
+				<Icon name="ic:round-star-outline" aria-hidden="true"	class="self-center text-4xl"/>
+				<div aria-hidden="true" class="self-center">{stargazerPrint}</div>
+				<div class="sr-only">{`${stargazerCount} Stars`}</div>
+			</div>
+			<p class="hidden lg:block text-base text-center dark:text-secondary-300 text-secondary-900">
+				{description}
+			</p>
+			<a href={url} target="_blank" rel="noreferrer noopener" aria-label=`link to ${name} repo`>
+				<Icon name="ic:baseline-link" aria-hidden="true" class="self-center text-4xl"/>
+			</a>
+		</div>
+		<p class="lg:hidden text-center dark:text-secondary-300 text-secondary-900">
+			{description}
+		</p>
 	</div>
-	<p class="text-center min-h-[4.5rem] lg:px-4 dark:text-secondary-300 text-secondary-900">
-		{description}
-	</p>
 	{prs.length > 0 ? 
 		<div class="pt-4">
 			<h3 class="text-center text-xl font-medium">Pull Requests</h3>
 			{prs.map(p => (
-				<a href={p.url} target="_blank" rel="noreferrer noopener"
-					class="py-2 hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
-				>
-					<p>{p.title}</p>
-				</a>
+				<p class="py-2 lg:py-0 w-fit">
+					<a href={p.url} target="_blank" rel="noreferrer noopener"
+						class="hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
+					>{p.title}</a>
+				</p>
 			))}
 		</div> : null
 	}
@@ -37,11 +45,11 @@ const { repo: {description,issues, name, prs, url} } = Astro.props;
 		<div class="pt-4">
 			<h3 class="text-center text-xl font-medium">Issues</h3>
 			{issues.map(i => (
-				<a href={i.url} target="_blank" rel="noreferrer noopener"
-				  class="py-2 hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
-				>
-					<p>{i.title}</p>
-				</a>
+				<p class="py-2 lg:py-0 w-fit">
+					<a href={i.url} target="_blank" rel="noreferrer noopener"
+						class="hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
+					>{i.title}</a>
+				</p>
 			))}
 		</div> : null
 	}

@@ -22,7 +22,7 @@ export default defineConfig({
     icon({
       include: {
         'fa6-brands': ['github', 'linkedin'],
-        ic: ['baseline-code', 'baseline-link', 'outline-place', 'twotone-web']
+        ic: ['baseline-code', 'baseline-link', 'round-star-outline', 'outline-place', 'twotone-web']
       }
     })
   ]
