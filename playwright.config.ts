@@ -76,7 +76,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'pnpm preview',
-    port: 4321,
+    url: process.env.CI ? 'http://127.0.0.1:4321/astro-portfolio' : 'http://127.0.0.1:4321',
     reuseExistingServer: !process.env.CI,
   },
 });
