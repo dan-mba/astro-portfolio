@@ -29,7 +29,7 @@ export default defineConfig({
     actionTimeout: 0,
 
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://127.0.0.1:4321',
+    baseURL: process.env.CI ? 'http://127.0.0.1:4321/astro-portfolio' : 'http://127.0.0.1:4321',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
