@@ -42,14 +42,24 @@ test.describe('accessibility tests (dark)', () => {
 //   });
 // });
 
-// test.describe('Homepage Mobile Tests', () => {
-//   test.skip(({isMobile}) => !isMobile, 'Mobile only tests');
+test.describe('Homepage Mobile Tests', () => {
+  test.skip(({isMobile}) => !isMobile, 'Mobile only tests');
 
-//   test('shows menu drawer', async({ page }) => {
-//     await page.goto('/');
-//     const menuButton = page.locator('#menu-button');
-//     await menuButton.click();
-//     const drawer = page.locator('#menu-drawer');
-//     await expect(drawer).toBeVisible();
-//   });
-// });
+  test('shows menu drawer', async({ page }) => {
+    await page.goto('/');
+    const menuButton = page.locator('#menu-button');
+    await menuButton.click();
+    const drawer = page.locator('.react-aria-Popover');
+    await expect(drawer).toBeVisible();
+  });
+
+  test('axe wcag menu test', async({ page }) => {
+    await page.goto('/');
+    const menuButton = page.locator('#menu-button');
+    await menuButton.click();
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
+});
