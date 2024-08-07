@@ -1,5 +1,6 @@
 ---
 import DesktopNav from './DesktopNav.astro';
+import MobileNav from './MobileNav.astro';
 const base = import.meta.env.BASE_URL;
 ---
 <header class="sticky w-full bg-primary-950 text-primary-200">
@@ -10,6 +11,7 @@ const base = import.meta.env.BASE_URL;
         <div class="text-5xl font-hw min-w-[100px]">Dan</div>
       </a>
       <DesktopNav />
+      <MobileNav/>
     </nav>
   </div>
 </header>

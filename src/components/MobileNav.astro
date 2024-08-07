@@ -1,0 +1,11 @@
+---
+import MobileMenu from '@components/MobileMenu'
+import { Icon } from 'astro-icon/components';
+
+const path = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+
+---
+<MobileMenu base={base} path={path} client:visible>
+  <Icon name="ic:baseline-menu" aria-hidden="true"/>
+</MobileMenu>
