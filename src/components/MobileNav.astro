@@ -6,6 +6,6 @@ const path = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
 ---
-<MobileMenu base={base} path={path} client:visible>
+<MobileMenu base={base} path={path} client:load>
   <Icon name="ic:baseline-menu" aria-hidden="true"/>
 </MobileMenu>
