@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "check": "astro check",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "pnpm exec playwright test"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.1",
@@ -24,7 +25,10 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.9.1",
+    "@playwright/test": "^1.46.0",
     "@types/emoji-js": "^3.5.2",
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "sharp": "^0.33.4",
