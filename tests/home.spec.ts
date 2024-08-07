@@ -47,8 +47,8 @@ test.describe('Homepage Mobile Tests', () => {
 
   test('shows menu drawer', async({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState("domcontentloaded");
     const menuButton = page.locator('#menu-button');
+    await menuButton.waitFor();
     await menuButton.click();
     const drawer = page.locator('.react-aria-Popover');
     await expect(drawer).toBeVisible();
@@ -56,8 +56,8 @@ test.describe('Homepage Mobile Tests', () => {
 
   test('axe wcag menu test', async({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState("domcontentloaded");
     const menuButton = page.locator('#menu-button');
+    await menuButton.waitFor();
     await menuButton.click();
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
