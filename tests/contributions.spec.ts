@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const pageString = '/contributions/1/'
+const pageString = './contributions/1/'
 
 test.describe('Contributions Page Tests', () => {
   test('Page loads', async ({ page }) => {
