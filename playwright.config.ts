@@ -29,7 +29,7 @@ export default defineConfig({
     actionTimeout: 0,
 
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.CI ? 'http://localhost:4321/astro-portfolio' : 'http://localhost:4321',
+    baseURL: process.env.CI ? 'http://localhost:4321/astro-portfolio/' : 'http://localhost:4321',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -75,8 +75,8 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm preview',
-    url: process.env.CI ? 'http://localhost:4321/astro-portfolio/' : 'http://localhost:4321/',
+    command: 'pnpm preview:ci',
+    url: 'http://localhost:4321/astro-portfolio/',
     stdout: 'pipe',
     stderr: 'pipe',
     reuseExistingServer: !process.env.CI,
