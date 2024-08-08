@@ -47,7 +47,6 @@ test.describe('Homepage Mobile Tests', () => {
 
   test('shows menu drawer', async({ page }) => {
     await page.goto('./');
-    console.log(page.url());
     const menuButton = page.locator('#menu-button');
     await menuButton.waitFor();
     await menuButton.click();

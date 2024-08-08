@@ -75,7 +75,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm preview:ci',
+    command: 'pnpm preview',
     url: 'http://localhost:4321/astro-portfolio/',
     stdout: 'pipe',
     stderr: 'pipe',
