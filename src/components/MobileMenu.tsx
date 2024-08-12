@@ -7,15 +7,30 @@ export default function MobileMenu({base, path, children}: {base: string, path: 
     return 'font-bold block py-2';
   }
 
+  const pages = [
+    {
+      url: `${base}`,
+      name: 'About'
+    },
+    {
+      url: `${base}projects/1/`,
+      name: 'Projects'
+    },
+    {
+      url: `${base}contributions/1/`,
+      name: 'Contributions'
+    }
+  ];
+
   return (
     <MenuTrigger>
       <div className="lg:hidden grow flex justify-end text-2xl pr-2">
         <Button id="menu-button" aria-label="Menu" className="px-3">{children}</Button>
         <Popover>
           <Menu className="bg-primary-950 text-primary-200 text-xl px-4">
-            <MenuItem href={`${base}`} className={urlMatch(`${base}`)}>About</MenuItem>
-            <MenuItem href={`${base}projects/1/`} className={urlMatch(`${base}projects/1/`)}>Projects</MenuItem>
-            <MenuItem href={`${base}contributions/1/`} className={urlMatch(`${base}contributions/1/`)}>Contributions</MenuItem>
+            {pages.map((page, index) => (
+              <MenuItem href={page.url} className={urlMatch(page.url)} key={`page${index}`}>{page.name}</MenuItem>
+            ))}
             <MenuItem
               href="https://github.com/dan-mba"
               target="_blank" rel="noreferrer noopener"
