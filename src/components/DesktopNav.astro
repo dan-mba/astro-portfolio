@@ -4,21 +4,32 @@ import { Icon } from 'astro-icon/components';
 const path = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
+const pages = [
+  {
+    url: `${base}`,
+    name: 'About'
+  },
+  {
+    url: `${base}projects/1/`,
+    name: 'Projects'
+  },
+  {
+    url: `${base}contributions/1/`,
+    name: 'Contributions'
+  }
+];
+
 function urlMatch(url: string) {
   if (url !== path) return '';
   return "underline underline-offset-8"
 }
 ---
 <ul class="list-none hidden lg:flex grow justify-end items-center text-2xl gap-3">
-  <li class="hover:text-secondary-300">
-    <a href={`${base}`} class={urlMatch(`${base}`)}>About</a>
-  </li>
-  <li class="hover:text-secondary-300">
-    <a href={`${base}projects/1/`} class={urlMatch(`${base}projects/1/`)}>Projects</a>
-  </li>
-  <li class="hover:text-secondary-300">
-    <a href={`${base}contributions/1/`} class={urlMatch(`${base}contributions/1/`)}>Contributions</a>
-  </li>
+  {pages.map(page => (
+    <li class="hover:text-secondary-300">
+      <a href={page.url} class={urlMatch(page.url)}>{page.name}</a>
+    </li>
+  ))}
   <li class="text-4xl hover:text-secondary-300">
     <a href="https://github.com/dan-mba" aria-label="GitHub" target="_blank" rel="noreferrer noopener">
       <Icon name="fa6-brands:github" aria-hidden="true"/>
