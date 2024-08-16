@@ -25,7 +25,10 @@ export default function MobileMenu({base, path, children}: {base: string, path: 
   return (
     <MenuTrigger>
       <div className="lg:hidden grow flex justify-end text-2xl pr-2">
-        <Button id="menu-button" aria-label="Menu" className="px-3">{children}</Button>
+        <Button id="menu-button" className="px-3">
+          {children}
+          <span className="sr-only">Menu</span>
+        </Button>
         <Popover>
           <Menu className="bg-primary-950 text-primary-200 text-xl px-4">
             {pages.map((page, index) => (
