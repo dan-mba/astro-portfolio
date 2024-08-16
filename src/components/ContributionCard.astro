@@ -21,8 +21,9 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 			<p class="hidden lg:block text-base text-center dark:text-secondary-300 text-secondary-900">
 				{description}
 			</p>
-			<a href={url} target="_blank" rel="noreferrer noopener" aria-label=`link to ${name} repo`>
+			<a href={url} target="_blank" rel="noreferrer noopener">
 				<Icon name="ic:baseline-link" aria-hidden="true" class="self-center text-4xl"/>
+				<span class="sr-only">{`link to ${name} repo`}</span>
 			</a>
 		</div>
 		<p class="lg:hidden text-center dark:text-secondary-300 text-secondary-900">
