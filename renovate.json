@@ -3,5 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "prHourlyLimit": 5
+  "prHourlyLimit": 5,
+  "rangeStrategy": "bump"
 }
