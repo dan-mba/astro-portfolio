@@ -31,7 +31,7 @@
     "@axe-core/playwright": "^4.9.1",
     "@playwright/test": "^1.46.1",
     "@types/emoji-js": "^3.5.2",
-    "@types/node": "^22.4.0",
+    "@types/node": "^22.4.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "sharp": "^0.33.5",
