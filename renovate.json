@@ -4,5 +4,6 @@
     "config:recommended"
   ],
   "prHourlyLimit": 5,
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "schedule": ["before 4am on Monday"]
 }
