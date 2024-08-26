@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import defaultTheme from 'tailwindcss/defaultTheme';
+import { addIconSelectors } from '@iconify/tailwind';
 
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -49,5 +50,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    addIconSelectors(['fa6-brands', 'ic']),
+  ],
 }

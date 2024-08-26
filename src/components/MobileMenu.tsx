@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react';
 import {Button, Menu, MenuItem, MenuTrigger, Popover} from 'react-aria-components';
 
-export default function MobileMenu({base, path, children}: {base: string, path: string, children: ReactNode}) {
+export default function MobileMenu({base, path}: {base: string, path: string}) {
   function urlMatch(url: string) {
     if (url !== path) return 'block py-2';
     return 'font-bold block py-2';
@@ -26,7 +26,7 @@ export default function MobileMenu({base, path, children}: {base: string, path: 
     <MenuTrigger>
       <div className="lg:hidden grow flex justify-end text-2xl pr-2">
         <Button id="menu-button" className="px-3">
-          {children}
+          <span className="iconify ic--baseline-menu block" aria-hidden="true"></span>
           <span className="sr-only">Menu</span>
         </Button>
         <Popover>
@@ -38,12 +38,12 @@ export default function MobileMenu({base, path, children}: {base: string, path: 
               href="https://github.com/dan-mba"
               target="_blank" rel="noreferrer noopener"
               className="block py-2"
-            >GitHub</MenuItem>
+            >GitHub <span className="iconify fa6-brands--github w-6 h-6 align-sub" aria-hidden="true"></span></MenuItem>
             <MenuItem
               href="https://www.linkedin.com/in/danburkhardt/"
               target="_blank" rel="noreferrer noopener"
               className="block py-2"
-            >LinkedIn</MenuItem>
+            >LinkedIn <span className="iconify fa6-brands--linkedin w-6 h-6 align-sub" aria-hidden="true"></span></MenuItem>
           </Menu>
         </Popover>
       </div>
