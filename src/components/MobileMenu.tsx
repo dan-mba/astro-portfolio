@@ -1,4 +1,3 @@
-import type {ReactNode} from 'react';
 import {Button, Menu, MenuItem, MenuTrigger, Popover} from 'react-aria-components';
 
 export default function MobileMenu({base, path}: {base: string, path: string}) {
