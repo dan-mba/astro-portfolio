@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
 import JobSection from '@components/JobSection.astro';
 import binary from '../img/binary.jpg';
@@ -78,7 +77,7 @@ const locations = [
     </div>
   </section>
   <main id="maincontent">
-    <section class="flex flex-col items-center pt-8 pb-4">
+    <section class="flex flex-col items-center pt-8 pb-4 px-[min(2vw,2em)]">
       <h1 class="text-5xl">About Me</h1>
       <p class="text-base max-w-prose my-4">
         I am a Software Engineer with years of experience developing software 
@@ -116,7 +115,7 @@ const locations = [
         {locations.map(loc => (
         <li class="flex justify-start items-center text-left w-full py-1 px-4">
           <div class="pr-4 dark:text-secondary-300 text-secondary-900">
-            <Icon name="ic:outline-place" aria-hidden="true" focusable="false" class="w-6 h-6"/>
+            <span class="iconify ic--outline-place block w-6 h-6" aria-hidden="true"></span>
           </div>
           <div>{loc}</div>
         </li>
