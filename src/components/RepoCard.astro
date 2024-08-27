@@ -27,12 +27,16 @@ const { repo: {description, homepageUrl ,languages, name, openGraphImageUrl, url
 	/>
 	<p class="text-base grow pb-2">{description}</p>
 	<div class="flex justify-between text-base px-2 dark:text-primary-300 text-primary-800">
-		<a href={url} class="flex gap-1 items-center" target="_blank" rel="noreferrer noopener">
+		<a href={url} class="flex gap-1 items-center dark:hover:text-secondary-200 hover:text-secondary-600"
+			target="_blank" rel="noreferrer noopener"
+		>
 			<span class="iconify ic--baseline-code block text-2xl" aria-hidden="true"></span>
 			<div>Code</div>
 		</a>
 		{homepageUrl ? 
-			<a href={homepageUrl} class="flex gap-1 items-center" target="_blank" rel="noreferrer noopener">
+			<a href={homepageUrl} class="flex gap-1 items-center dark:hover:text-secondary-200 hover:text-secondary-600"
+				target="_blank" rel="noreferrer noopener"
+			>
 				<div>Deployed</div>
 				<span class="iconify ic--twotone-web block text-2xl" aria-hidden="true"></span>
 			</a> :

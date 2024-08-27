@@ -20,7 +20,7 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 			<p class="hidden lg:block text-base text-center dark:text-secondary-300 text-secondary-900">
 				{description}
 			</p>
-			<a href={url} target="_blank" rel="noreferrer noopener">
+			<a href={url} class="dark:hover:text-secondary-200 hover:text-secondary-600" target="_blank" rel="noreferrer noopener">
 				<span class="iconify ic--baseline-link block self-center text-4xl" aria-hidden="true"></span>
 				<span class="sr-only">{`link to ${name} repo`}</span>
 			</a>
@@ -35,7 +35,7 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 			{prs.map(p => (
 				<p class="py-2 lg:py-0 w-fit">
 					<a href={p.url} target="_blank" rel="noreferrer noopener"
-						class="hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
+						class="hover:underline dark:hover:text-secondary-200 hover:text-secondary-600 underline-offset-2"
 					>{p.title}</a>
 				</p>
 			))}
@@ -47,7 +47,7 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 			{issues.map(i => (
 				<p class="py-2 lg:py-0 w-fit">
 					<a href={i.url} target="_blank" rel="noreferrer noopener"
-						class="hover:underline hover:dark:text-secondary-300 hover:text-secondary-900 underline-offset-2"
+						class="hover:underline dark:hover:text-secondary-200 hover:text-secondary-600 underline-offset-2"
 					>{i.title}</a>
 				</p>
 			))}
