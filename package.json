@@ -31,7 +31,7 @@
     "@iconify/tailwind": "^1.1.3",
     "@playwright/test": "^1.47.0",
     "@types/emoji-js": "^3.5.2",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "sharp": "^0.33.5",
