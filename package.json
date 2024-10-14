@@ -27,7 +27,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
     "@iconify-json/fa6-brands": "^1.2.1",
-    "@iconify-json/ic": "^1.2.0",
+    "@iconify-json/ic": "^1.2.1",
     "@iconify/tailwind": "^1.1.3",
     "@playwright/test": "^1.47.2",
     "@types/emoji-js": "^3.5.2",
