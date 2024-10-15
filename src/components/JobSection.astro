@@ -12,7 +12,7 @@ interface Props {
 
 const {title, titleUrl, img, imgAlt, p, index} = Astro.props;
 
-const indexClass = index % 2 === 0 ? "flex-row dark:bg-secondary-950 bg-secondary-200" : "flex-row-reverse"
+const indexClass = index % 2 === 0 ? "flex-row dark:bg-blue-ribbon-950 bg-blue-ribbon-200" : "flex-row-reverse"
 
 ---
 <section class={`flex items-center w-full justify-around min-h-[350px] py-4 px-[min(2vw,2em)] ${indexClass}`} >
@@ -31,9 +31,9 @@ const indexClass = index % 2 === 0 ? "flex-row dark:bg-secondary-950 bg-secondar
       <a href={titleUrl} target="_blank" rel="noreferrer noopener"
         class="no-underline"
       >
-        <h2 class="text-4xl text-center dark:text-secondary-300 text-secondary-900 hover:underline">{title}</h2>
+        <h2 class="text-4xl text-center dark:text-blue-ribbon-200 text-blue-ribbon-800 hover:underline">{title}</h2>
       </a> :
-      <h2 class="text-4xl text-center">{title}</h2>
+      <h2 class="text-4xl text-center dark:text-blue-ribbon-300 text-blue-ribbon-900">{title}</h2>
     }
     {
       p.map((pg) => (
