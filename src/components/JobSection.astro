@@ -12,7 +12,7 @@ interface Props {
 
 const {title, titleUrl, img, imgAlt, p, index} = Astro.props;
 
-const indexClass = index % 2 === 0 ? "flex-row dark:bg-blue-ribbon-950 bg-blue-ribbon-200" : "flex-row-reverse"
+const indexClass = index % 2 === 0 ? "flex-row dark:bg-blue-ribbon-950 bg-blue-ribbon-100" : "flex-row-reverse"
 
 ---
 <section class={`flex items-center w-full justify-around min-h-[350px] py-4 px-[min(2vw,2em)] ${indexClass}`} >
