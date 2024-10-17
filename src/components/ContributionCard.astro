@@ -8,7 +8,7 @@ interface Props {
 const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, url} } = Astro.props;
 ---
 
-<li class="dark:bg-primary-950 bg-primary-200 rounded-lg py-2 px-2">
+<li class="dark:bg-blue-ribbon-950 bg-blue-ribbon-300 rounded-lg py-2 px-2">
 	<div class="flex justify-center flex-col">
 		<h2 class="text-center text-3xl font-bold">{name}</h2>
 		<div class="text-2xl flex flex-row justify-between items-center gap-2 lg:min-h-[4.5rem]">
@@ -17,15 +17,15 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 				<div aria-hidden="true" class="self-center">{stargazerPrint}</div>
 				<div class="sr-only">{`${stargazerCount} Stars`}</div>
 			</div>
-			<p class="hidden lg:block text-base text-center dark:text-secondary-300 text-secondary-900">
+			<p class="hidden lg:block text-base text-center dark:text-blue-ribbon-300 text-blue-ribbon-900">
 				{description}
 			</p>
-			<a href={url} class="dark:hover:text-secondary-200 hover:text-secondary-600" target="_blank" rel="noreferrer noopener">
+			<a href={url} class="dark:hover:text-blue-ribbon-200 hover:text-blue-ribbon-600" target="_blank" rel="noreferrer noopener">
 				<span class="iconify ic--baseline-link block self-center text-4xl" aria-hidden="true"></span>
 				<span class="sr-only">{`link to ${name} repo`}</span>
 			</a>
 		</div>
-		<p class="lg:hidden text-center dark:text-secondary-300 text-secondary-900">
+		<p class="lg:hidden text-center dark:text-blue-ribbon-300 text-blue-ribbon-900">
 			{description}
 		</p>
 	</div>
@@ -35,7 +35,7 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 			{prs.map(p => (
 				<p class="py-2 lg:py-0 w-fit">
 					<a href={p.url} target="_blank" rel="noreferrer noopener"
-						class="hover:underline dark:hover:text-secondary-200 hover:text-secondary-600 underline-offset-2"
+						class="hover:underline dark:hover:text-blue-ribbon-200 hover:text-blue-ribbon-600 underline-offset-2"
 					>{p.title}</a>
 				</p>
 			))}
@@ -47,7 +47,7 @@ const { repo: {description, issues, name, prs, stargazerCount, stargazerPrint, u
 			{issues.map(i => (
 				<p class="py-2 lg:py-0 w-fit">
 					<a href={i.url} target="_blank" rel="noreferrer noopener"
-						class="hover:underline dark:hover:text-secondary-200 hover:text-secondary-600 underline-offset-2"
+						class="hover:underline dark:hover:text-blue-ribbon-200 hover:text-blue-ribbon-600 underline-offset-2"
 					>{i.title}</a>
 				</p>
 			))}
