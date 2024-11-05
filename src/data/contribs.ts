@@ -1,9 +1,5 @@
 import { graphql } from "@octokit/graphql";
-import EmojiConvertor from 'emoji-js';
-const emoji = new EmojiConvertor();
-emoji.replace_mode = 'unified';
-emoji.allow_native = true;
-emoji.allow_caps = true;
+import { emojify } from "node-emoji";
 
 type filterType = {
   owner: string;
@@ -363,7 +359,7 @@ export async function getContributions() {
   });
 
   repos.forEach(r => {
-    r.description = cropString(emoji.replace_colons(r.description));
+    r.description = cropString(emojify(r.description));
     r.stargazerPrint = r.stargazerCount < 1000 ? `${r.stargazerCount}` :
       Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'short' }).format(r.stargazerCount);
   })
