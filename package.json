@@ -21,7 +21,7 @@
     "astro": "^4.16.13",
     "node-emoji": "^2.1.3",
     "react": "^18.3.1",
-    "react-aria-components": "^1.4.1",
+    "react-aria-components": "^1.5.0",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
