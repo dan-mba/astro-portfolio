@@ -27,8 +27,8 @@ importers:
         specifier: ^4.16.17
         version: 4.16.17(@types/node@22.10.1)(rollup@4.27.2)(typescript@5.7.2)
       node-emoji:
-        specifier: ^2.1.3
-        version: 2.1.3
+        specifier: ^2.2.0
+        version: 2.2.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2139,8 +2139,8 @@ packages:
   nlcst-to-string@4.0.0:
     resolution: {integrity: sha512-YKLBCcUYKAg0FNlOBT6aI91qFmSiFKiluk655WzPF+DDMA02qIyy8uiRqI8QXtcFpEvll12LpL5MXqEmAZ+dcA==}
 
-  node-emoji@2.1.3:
-    resolution: {integrity: sha512-E2WEOVsgs7O16zsURJ/eH8BqhF029wGpEOnv7Urwdo2wmQanOACwJQh0devF9D9RhoZru0+9JXIS0dBXIAz+lA==}
+  node-emoji@2.2.0:
+    resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
     engines: {node: '>=18'}
 
   node-releases@2.0.18:
@@ -5678,7 +5678,7 @@ snapshots:
     dependencies:
       '@types/nlcst': 2.0.3
 
-  node-emoji@2.1.3:
+  node-emoji@2.2.0:
     dependencies:
       '@sindresorhus/is': 4.6.0
       char-regex: 1.0.2
