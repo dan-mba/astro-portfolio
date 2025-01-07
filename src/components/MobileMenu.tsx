@@ -29,7 +29,7 @@ export default function MobileMenu({base, path}: {base: string, path: string}) {
           <span className="sr-only">Menu</span>
         </Button>
         <Popover>
-          <Menu className="bg-primary-950 text-primary-200 text-xl px-4">
+          <Menu className="bg-big-stone-950 text-big-stone-100 text-xl px-4">
             {pages.map((page, index) => (
               <MenuItem href={page.url} className={urlMatch(page.url)} key={`page${index}`}>{page.name}</MenuItem>
             ))}
