@@ -24,17 +24,17 @@ function urlMatch(url: string) {
 ---
 <ul class="list-none hidden lg:flex grow justify-end items-center text-2xl gap-3">
   {pages.map(page => (
-    <li class="hover:text-secondary-200">
+    <li class="hover:text-big-stone-300">
       <a href={page.url} class={urlMatch(page.url)}>{page.name}</a>
     </li>
   ))}
-  <li class="text-4xl hover:text-secondary-200">
+  <li class="text-4xl hover:text-big-stone-300">
     <a href="https://github.com/dan-mba" target="_blank" rel="noreferrer noopener">
       <span class="iconify fa6-brands--github block" aria-hidden="true"></span>
       <span class="sr-only">GitHub</span>
     </a>
   </li>
-  <li class="text-4xl hover:text-secondary-200">
+  <li class="text-4xl hover:text-big-stone-300">
     <a href="https://www.linkedin.com/in/danburkhardt/" target="_blank" rel="noreferrer noopener">
       <span class="iconify fa6-brands--linkedin block" aria-hidden="true"></span>
       <span class="sr-only">LinkedIn</span>

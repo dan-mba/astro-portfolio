@@ -3,11 +3,11 @@ import DesktopNav from './DesktopNav.astro';
 import MobileNav from './MobileNav.astro';
 const base = import.meta.env.BASE_URL;
 ---
-<header class="sticky w-full bg-primary-950 text-primary-200">
-  <div class="max-w-screen-xl w-full mx-auto px-[1%]">
-    <a href="#maincontent" class="skip-link absolute block bg-primary-950 text-xl px-1.5 py-3">Skip to content</a>
+<header class="sticky top-0 left-0 z-10 w-full bg-big-stone-950 text-big-stone-100">
+  <div class=" max-w-screen-xl w-full mx-auto px-[1%]">
+    <a href="#maincontent" class="skip-link absolute block bg-big-stone-950 text-xl px-1.5 py-3">Skip to content</a>
     <nav class="flex">
-      <a href={`${base}`} class="hover:text-blue-ribbon-300">
+      <a href={`${base}`} class="hover:text-big-stone-300">
         <div class="text-5xl font-hw min-w-[100px]">Dan</div>
       </a>
       <DesktopNav />
