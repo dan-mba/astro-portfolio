@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.1.6",
+    "@astrojs/react": "^4.2.0",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.5",
     "@octokit/graphql": "^8.1.2",
-    "astro": "^5.1.9",
+    "astro": "^5.1.10",
     "node-emoji": "^2.2.0",
     "react": "^19.0.0",
     "react-aria-components": "^1.6.0",
