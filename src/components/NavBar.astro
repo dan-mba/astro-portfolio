@@ -4,7 +4,7 @@ import MobileNav from './MobileNav.astro';
 const base = import.meta.env.BASE_URL;
 ---
 <header class="sticky top-0 left-0 z-10 w-full bg-big-stone-950 text-big-stone-100">
-  <div class=" max-w-screen-xl w-full mx-auto px-[1%]">
+  <div class=" max-w-(--breakpoint-xl) w-full mx-auto px-[1%]">
     <a href="#maincontent" class="skip-link absolute block bg-big-stone-950 text-xl px-1.5 py-3">Skip to content</a>
     <nav class="flex">
       <a href={`${base}`} class="hover:text-big-stone-300">

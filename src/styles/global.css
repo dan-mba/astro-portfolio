@@ -1,13 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.mjs';
+
+@theme {
+  --breakpoint-xs: 100px;
+  --breakpoint-sm: 350px;
+  --breakpoint-md: 500px;
+  --breakpoint-lg: 800px;
+  --breakpoint-xl: 1200px;
+
+  --color-big-stone-600: #437bcd;
+  --color-big-stone-950: #1c2841;
+}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+/*@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}*/
 
 a:focus-visible {
-  outline: 2px solid theme(colors.big-stone.600);
+  outline: 2px solid var(--color-big-stone-600);
   outline-offset: 2px;
 }
 
 div[data-testid="underlay"] {
-  background-color: theme(colors.big-stone.950);
+  background-color: var(--color-big-stone-950);
   opacity:0.95;
 }

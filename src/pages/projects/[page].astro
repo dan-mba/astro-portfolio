@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL;
   title=`Projects Page ${currentPage}`
   description=`Projects Page ${currentPage}`
 >
-  <main id="maincontent" class="max-w-screen-xl w-full mx-auto px-[1%] py-4">
+  <main id="maincontent" class="max-w-(--breakpoint-xl) w-full mx-auto px-[1%] py-4">
     <h1 class="text-center text-4xl py-4 text-blue-ribbon-950 dark:text-blue-ribbon-100">Personal Projects</h1>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
       {data.map((repo, index) => <RepoCard repo={repo} index={index}/>)}

@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+
 const pages = process.env.CI ? {
   site: 'https://dan-mba.github.io',
   base: 'astro-portfolio'
@@ -19,7 +20,9 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    tailwind(),
     sitemap()
-  ]
+  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
