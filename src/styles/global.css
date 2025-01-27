@@ -9,26 +9,45 @@
   --breakpoint-lg: 800px;
   --breakpoint-xl: 1200px;
 
+  --font-sans: "Roboto Flex", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-hw: Damion, cursive;
+
+  --color-blue-ribbon-50:  #eff3ff;
+  --color-blue-ribbon-100: #dce5fd;
+  --color-blue-ribbon-200: #c1d1fc;
+  --color-blue-ribbon-300: #96b5fa;
+  --color-blue-ribbon-400: #648df6;
+  --color-blue-ribbon-500: #3860f0;
+  --color-blue-ribbon-600: #2b47e5;
+  --color-blue-ribbon-700: #2234d3;
+  --color-blue-ribbon-800: #222cab;
+  --color-blue-ribbon-900: #212a87;
+  --color-blue-ribbon-950: #191d52;
+
+  --color-ebony-clay-50:  #f4f6fb;
+  --color-ebony-clay-100: #e8ecf6;
+  --color-ebony-clay-200: #ccd7eb;
+  --color-ebony-clay-300: #9fb6da;
+  --color-ebony-clay-400: #6c90c4;
+  --color-ebony-clay-500: #4971ae;
+  --color-ebony-clay-600: #375992;
+  --color-ebony-clay-700: #2e4876;
+  --color-ebony-clay-800: #293e63;
+  --color-ebony-clay-900: #273653;
+  --color-ebony-clay-950: #192236;
+
+  --color-big-stone-50:  #f1f7fd;
+  --color-big-stone-100: #e0edf9;
+  --color-big-stone-200: #c9e0f4;
+  --color-big-stone-300: #a3cded;
+  --color-big-stone-400: #77b1e3;
+  --color-big-stone-500: #5795da;
   --color-big-stone-600: #437bcd;
+  --color-big-stone-700: #3967bc;
+  --color-big-stone-800: #345699;
+  --color-big-stone-900: #2e497a;
   --color-big-stone-950: #1c2841;
 }
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-/*@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}*/
 
 a:focus-visible {
   outline: 2px solid var(--color-big-stone-600);
