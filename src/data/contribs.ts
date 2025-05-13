@@ -7,7 +7,10 @@ type filterType = {
   number: number;
 }
 
-const repoFilter = [{owner: 'firstcontributions', name: 'first-contributions'}];
+const repoFilter = [
+  {owner: 'firstcontributions', name: 'first-contributions'},
+  {owner: 'uBlockOrigin', name: 'uAssets'}
+];
 const issueFilter = [
   {owner: 'gatsbyjs', name: 'gatsby', number: 36192},
   {owner: 'microsoft', name: 'playwright', number: 18847},
