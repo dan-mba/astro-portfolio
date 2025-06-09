@@ -16,7 +16,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.0",
-    "@octokit/graphql": "^8.2.2",
+    "@octokit/graphql": "^9.0.1",
     "astro": "^5.8.1",
     "node-emoji": "^2.2.0",
     "react": "^19.1.0",
