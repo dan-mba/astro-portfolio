@@ -9,7 +9,8 @@ type filterType = {
 
 const repoFilter = [
   {owner: 'firstcontributions', name: 'first-contributions'},
-  {owner: 'uBlockOrigin', name: 'uAssets'}
+  {owner: 'uBlockOrigin', name: 'uAssets'},
+  {owner: 'webcompat', name: 'web-bugs'}
 ];
 const issueFilter = [
   {owner: 'gatsbyjs', name: 'gatsby', number: 36192},
