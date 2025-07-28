@@ -37,12 +37,12 @@ export default function MobileMenu({base, path}: {base: string, path: string}) {
               href="https://github.com/dan-mba"
               target="_blank" rel="noreferrer noopener"
               className="block py-2"
-            >GitHub <span className="iconify fa6-brands--github w-6 h-6 align-sub" aria-hidden="true"></span></MenuItem>
+            >GitHub <span className="iconify fa7-brands--github w-6 h-6 align-sub" aria-hidden="true"></span></MenuItem>
             <MenuItem
               href="https://www.linkedin.com/in/danburkhardt/"
               target="_blank" rel="noreferrer noopener"
               className="block py-2"
-            >LinkedIn <span className="iconify fa6-brands--linkedin w-6 h-6 align-sub" aria-hidden="true"></span></MenuItem>
+            >LinkedIn <span className="iconify fa7-brands--linkedin w-6 h-6 align-sub" aria-hidden="true"></span></MenuItem>
           </Menu>
         </Popover>
       </div>
