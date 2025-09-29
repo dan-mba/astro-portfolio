@@ -5,5 +5,11 @@
   ],
   "prHourlyLimit": 5,
   "rangeStrategy": "bump",
-  "schedule": ["before 4am on Monday"]
+  "schedule": ["before 4am on Monday"],
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "1 day"
+    }
+  ]
 }
