@@ -31,7 +31,7 @@
     "@playwright/test": "^1.56.1",
     "@tailwindcss/vite": "^4.1.16",
     "@types/emoji-js": "^3.5.2",
-    "@types/node": "^22.18.12",
+    "@types/node": "^24.9.2",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "sharp": "^0.34.4",
