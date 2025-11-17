@@ -32,8 +32,8 @@
     "@tailwindcss/vite": "^4.1.17",
     "@types/emoji-js": "^3.5.2",
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3"
