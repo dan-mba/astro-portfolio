@@ -28,7 +28,7 @@
     "@iconify-json/fa7-brands": "^1.2.0",
     "@iconify-json/ic": "^1.2.4",
     "@iconify/tailwind": "^1.2.0",
-    "@playwright/test": "^1.56.1",
+    "@playwright/test": "^1.57.0",
     "@tailwindcss/vite": "^4.1.17",
     "@types/emoji-js": "^3.5.2",
     "@types/node": "^24.10.1",
