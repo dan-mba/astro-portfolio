@@ -24,7 +24,7 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.11.0",
+    "@axe-core/playwright": "^4.11.1",
     "@iconify-json/fa7-brands": "^1.2.1",
     "@iconify-json/ic": "^1.2.4",
     "@iconify/tailwind": "^1.2.0",
