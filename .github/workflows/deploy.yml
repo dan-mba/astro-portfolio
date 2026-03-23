@@ -23,7 +23,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v6
       - name: Install, build, and upload your site output
-        uses: withastro/action@v5
+        uses: withastro/action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.BUILD_GITHUB_TOKEN }}
         with:
