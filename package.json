@@ -13,7 +13,7 @@
     "test": "pnpm exec playwright test"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.7",
+    "@astrojs/check": "^0.9.8",
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.1",
     "@octokit/graphql": "^9.0.3",
