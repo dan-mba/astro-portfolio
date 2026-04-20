@@ -1,4 +1,6 @@
-import {Button, Menu, MenuItem, MenuTrigger, Popover} from 'react-aria-components';
+import {Button} from 'react-aria-components/Button';
+import {Menu, MenuItem, MenuTrigger} from 'react-aria-components/Menu';
+import {Popover} from 'react-aria-components/Popover';
 
 export default function MobileMenu({base, path}: {base: string, path: string}) {
   function urlMatch(url: string) {
