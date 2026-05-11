@@ -19,9 +19,9 @@
     "@octokit/graphql": "^9.0.3",
     "astro": "^6.2.1",
     "node-emoji": "^2.2.0",
-    "react": "^19.2.5",
+    "react": "^19.2.6",
     "react-aria-components": "^1.17.0",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
