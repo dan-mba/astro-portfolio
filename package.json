@@ -29,13 +29,13 @@
     "@iconify-json/ic": "^1.2.4",
     "@iconify/tailwind": "^1.2.0",
     "@playwright/test": "^1.61.1",
-    "@tailwindcss/vite": "^4.3.1",
+    "@tailwindcss/vite": "^4.3.2",
     "@types/emoji-js": "^3.5.2",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "sharp": "^0.35.3",
-    "tailwindcss": "^4.3.1",
+    "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@11.10.0+sha512.0b7f8b98060031904c017e3a41eb187a16d40eeb829b95c4f8cb03681761fc4ab53dd219115b9b447f4dce1a05a214764461e7d3703392a9f32f9511ce8c86c8"
