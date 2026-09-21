@@ -14,5 +14,8 @@
   ],
   "major": {
     "dependencyDashboardApproval": true
-  }
+  },
+  "ignoreDeps": [
+    "node"
+  ]
 }
