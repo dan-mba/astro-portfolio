@@ -19,7 +19,7 @@ export default defineConfig({
     domains: ["repository-images.githubusercontent.com"]
   },
   integrations: [
-    react(),
+    react({ compiler: true }),
     sitemap()
   ],
   vite: {
