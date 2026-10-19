@@ -16,14 +16,14 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/sitemap": "^3.7.4",
     "@octokit/graphql": "^9.0.5",
-    "astro": "^7.3.8",
+    "astro": "^7.4.0",
     "node-emoji": "^2.2.0",
     "react": "^19.3.0",
     "react-aria-components": "^1.22.1",
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@astrojs/react": "^7.0.1",
+    "@astrojs/react": "^7.1.0",
     "@axe-core/playwright": "^4.13.0",
     "@iconify-json/fa7-brands": "^1.2.4",
     "@iconify-json/ic": "^1.2.4",
