@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "check": "astro check",
     "preview": "astro preview",
     "preview:ci": "CI=true astro preview",
@@ -16,7 +16,7 @@
     "@astrojs/check": "^0.9.12",
     "@astrojs/sitemap": "^3.7.4",
     "@octokit/graphql": "^9.0.5",
-    "astro": "^7.4.4",
+    "astro": "^7.4.11",
     "node-emoji": "^2.2.0",
     "react": "^19.3.1",
     "react-aria-components": "^1.22.1",
